@@ -823,13 +823,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":                        
         buttons = [[
             InlineKeyboardButton('➕ ᴀᴅᴅ ᴛᴏ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true'),
-            InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ', url='https://t.me/amal_nath_05')
             ],[
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
-        ]]
+            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ ᴍᴇ', callback_data='about')
+            InlineKeyboardButton('🔒 ᴄʟᴏSᴇ', callback_data="close_data")
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=START_MESSAGE.format(user=query.from_user.mention, bot=temp.B_LINK),
@@ -920,7 +917,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('SOURCE CODE', url='https://github.com/MrMKN/PROFESSOR-BOT')
+            InlineKeyboardButton('SOURCE CODE', url='https://t.me/Unni0240)
             ],[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
         ]]
